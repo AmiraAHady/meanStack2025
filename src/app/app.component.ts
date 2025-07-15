@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { HomeComponent } from './components/home/home.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+// Decorator 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
+  selector: 'app-root',//render
+  imports: [HomeComponent,RecipesComponent,NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent {
   title = 'myApp';
 }
