@@ -5,7 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 // Decorator 
 @Component({
   selector: 'app-root',//render
-  imports: [HomeComponent,RecipesComponent,NavbarComponent],
+  imports: [HomeComponent,NavbarComponent,RecipesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

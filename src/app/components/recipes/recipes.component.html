@@ -1,1 +1,37 @@
-<h1>Recipes Components!</h1>
+<h2 class="text-center mb-4" id="menu">Menu</h2>
+<div class="row">
+  @for (item of recipes; track $index) {
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img [src]="item.image" class="card-img-top" alt="Margherita Pizza" />
+      <div class="card-body">
+        <h5
+          class="card-title"
+          [ngClass]="item.difficulty == 'Easy' ? 'title' : 'display-6'"
+        >
+          {{ item.name }}
+        </h5>
+        <p class="fw-bold text-success" [ngStyle]="{'background-color':'pink','padding':'2px'}">{{ item.cuisine }}</p>
+        <!-- conditional Rendering -->
+        <!-- <span 
+          class="badge rounded-pill text-bg-info d-block w-25 mb-1"
+          *ngIf="item.difficulty == 'Easy'"
+          >Easy</span
+        > -->
+        @if(item.difficulty == 'Easy'){
+        <span class="badge rounded-pill text-bg-info d-block w-25 mb-1"
+          >Easy</span
+        >
+        }@else {
+        <span class="badge rounded-pill text-bg-danger d-block w-25 mb-1">
+          {{ item.difficulty }}
+        </span>
+        }
+        <button class="btn btn-success">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+  }@empty {
+  <h1>No Recipes Founded</h1>
+  }
+</div>

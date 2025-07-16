@@ -1,44 +1,78 @@
 <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-4">Welcome to Foodie Heaven 🍽️</h1>
-      <p class="lead text-muted">Delicious meals delivered to your door</p>
-      <a class="btn btn-primary btn-lg mt-3" href="#menu">View Menu</a>
+  <div class="text-center mb-5">
+    <h1 class="display-4">Welcome to {{ myData.pagetitle }} 🍽️</h1>
+    <p class="lead text-muted">Delicious meals delivered to your door</p>
+    <a class="btn btn-primary btn-lg mt-3" href="#menu">View Menu</a>
+  </div>
+  <div class="mb-5">
+    <input type="text" class="form-control" [(ngModel)]="searchVal" />
+    <h2>{{searchVal}}</h2>
+  </div>
+
+  <h2 class="text-center mb-4" id="menu">Menu</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="https://cdn.dummyjson.com/recipe-images/1.webp"
+          class="card-img-top"
+          alt="Margherita Pizza"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Margherita Pizza</h5>
+          <p class="card-text">Classic cheese and tomato with fresh basil</p>
+          <p class="fw-bold text-success">$12.99</p>
+          <button
+            class="btn btn-success"
+            [disabled]="item"
+            (click)="addItemToCart('Margherita Pizza')"
+          >
+            Add To Cart
+          </button>
+          <!-- <button class="btn btn-success" disabled={{item}}>Add To Cart</button> -->
+        </div>
+      </div>
     </div>
-  
-    <h2 class="text-center mb-4" id="menu">Menu</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="https://cdn.dummyjson.com/recipe-images/1.webp" class="card-img-top" alt="Margherita Pizza" />
-          <div class="card-body">
-            <h5 class="card-title">Margherita Pizza</h5>
-            <p class="card-text">Classic cheese and tomato with fresh basil</p>
-            <p class="fw-bold text-success">$12.99</p>
-          </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <!-- <img [src]="saladImg" class="card-img-top" alt="Caesar Salad" /> -->
+        <img src="{{ saladImg }}" class="card-img-top" alt="Caesar Salad" />
+        <div class="card-body">
+          <h5 class="card-title">Quinoa Salad with Avocado</h5>
+          <p class="card-text">Crisp romaine lettuce with creamy dressing</p>
+          <p class="fw-bold text-success">$9.99</p>
+          <button
+            class="btn btn-success"
+            [disabled]="item"
+            (click)="addItemToCart('Quinoa Salad with Avocado')"
+          >
+            Add To Cart
+          </button>
         </div>
       </div>
-  
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="https://cdn.dummyjson.com/recipe-images/2.webp" class="card-img-top" alt="Caesar Salad" />
-          <div class="card-body">
-            <h5 class="card-title">Caesar Salad</h5>
-            <p class="card-text">Crisp romaine lettuce with creamy dressing</p>
-            <p class="fw-bold text-success">$9.99</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="https://cdn.dummyjson.com/recipe-images/3.webp" class="card-img-top" alt="Spaghetti Bolognese" />
-          <div class="card-body">
-            <h5 class="card-title">Spaghetti Bolognese</h5>
-            <p class="card-text">Hearty meat sauce over al dente pasta</p>
-            <p class="fw-bold text-success">$13.49</p>
-          </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="https://cdn.dummyjson.com/recipe-images/3.webp"
+          class="card-img-top"
+          alt="Spaghetti Bolognese"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ myData.mealName }}</h5>
+          <p class="card-text">Hearty meat sauce over al dente pasta</p>
+          <p class="fw-bold text-success">$13.49</p>
+          <button
+            class="btn btn-success"
+            [disabled]="item"
+            (click)="addItemToCart('Cookies')"
+          >
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
