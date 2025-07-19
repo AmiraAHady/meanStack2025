@@ -7,9 +7,8 @@
       <div class="card-body">
         <h5
           class="card-title"
-          [ngClass]="item.difficulty == 'Easy' ? 'title' : 'display-6'"
         >
-          {{ item.name }}
+          {{ item.name  | uppercase}}
         </h5>
         <p class="fw-bold text-success" [ngStyle]="{'background-color':'pink','padding':'2px'}">{{ item.cuisine }}</p>
         <!-- conditional Rendering -->

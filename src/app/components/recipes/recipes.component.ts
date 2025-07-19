@@ -1,11 +1,11 @@
-import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import {NgStyle, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Recipe } from '../../models/recipe';
 
 @Component({
   // component directive
   selector: 'app-recipes',
-  imports: [NgFor,NgIf,NgClass,NgStyle],
+  imports: [NgStyle,UpperCasePipe],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css',
 })
