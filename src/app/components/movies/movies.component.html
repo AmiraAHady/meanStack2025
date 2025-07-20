@@ -4,31 +4,39 @@
 <!-- <app-rating [recivedRating]="parentRating"></app-rating> -->
 
 <div class="row">
-  @for (item of allMovies; track $index) {
-  <div class="col-md-4 mb-4">
-    <div class="card h-100 shadow-sm">
-      <img [src]="'https://image.tmdb.org/t/p/w500/'+item.poster_path" class="card-img-top" alt="Margherita Pizza" />
-      <div class="card-body">
-        <h5
-          class="card-title"
-        >
-          {{ item.title }}
-        </h5>
-        <p class="fw-bold text-success">{{ item.overview }}</p>
-        <h4 >{{item.release_date | date:'fullDate'}}</h4>
-        <app-rating [recivedRating]="item.vote_average/2" (messageToParent)="showMessage($event)"></app-rating>
-        <!-- <h3>{{price|currency:'CAD'}}</h3> -->
-        <!-- conditional Rendering -->
-        <!-- <span 
+  @for (item of moviesList; track $index) {
+    <div class="col-md-4 mb-4">
+      <a [routerLink]="['/details',item.id]">
+      <div class="card h-100 shadow-sm">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500/' + item.poster_path"
+          class="card-img-top"
+          alt="Margherita Pizza"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ item.title }}
+          </h5>
+          <p class="fw-bold text-success">{{ item.overview }}</p>
+          <h4>{{ item.release_date | date : "fullDate" }}</h4>
+          <app-rating
+            [recivedRating]="item.vote_average / 2"
+            (messageToParent)="showMessage($event)"
+          ></app-rating>
+          <!-- <h3>{{price|currency:'CAD'}}</h3> -->
+          <!-- conditional Rendering -->
+          <!-- <span 
           class="badge rounded-pill text-bg-info d-block w-25 mb-1"
           *ngIf="item.difficulty == 'Easy'"
           >Easy</span
         > -->
-       
-        <button class="btn btn-success">Watch</button>
+
+          <button class="btn btn-success">Watch</button>
+        </div>
       </div>
+    </a>
     </div>
-  </div>
+  
   }@empty {
   <h1>No Movies Founded</h1>
   }
