@@ -1,0 +1,23 @@
+<div class="row">
+  @for (item of products; track $index) {
+  <div class="col-md-4 mb-4">
+    <a [routerLink]="['/productdetails',item.id]">
+    <div class="card h-100 shadow-sm">
+      <img [src]="item.image" class="card-img-top" alt="Margherita Pizza" />
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ item.title }}
+        </h5>
+        <p class="fw-bold text-success">{{ item.model }}</p>
+        <h4>{{ item.price }}</h4>
+
+        <button class="btn btn-success">Show</button>
+      </div>
+    </div>
+    </a>
+  </div>
+
+  }@empty {
+  <h1>No Movies Founded</h1>
+  }
+</div>

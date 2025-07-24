@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MoviesService {
-  apiKey = '';
+  apiKey = '0ab69d58b9382bc390a939b7dbbe713b';
   constructor(private http: HttpClient) {}
 
   getAllMovies(): Observable<any> {

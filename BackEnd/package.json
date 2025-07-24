@@ -1,0 +1,21 @@
+{
+  "name": "day-2",
+  "version": "1.0.0",
+  "description": "this is dummy project for node js course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node js",
+    "js",
+    "Express"
+  ],
+  "author": "amira",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.4"
+  }
+}
